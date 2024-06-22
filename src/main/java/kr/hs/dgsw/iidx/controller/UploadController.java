@@ -1,5 +1,6 @@
 package kr.hs.dgsw.iidx.controller;
 
+import jakarta.validation.Valid;
 import kr.hs.dgsw.iidx.dto.IIDXDto;
 import kr.hs.dgsw.iidx.service.UploadService;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 public class UploadController {
     private final UploadService uploadService;
     @PostMapping("create-iidx")
-    public IIDXDto createIIDX(@RequestBody IIDXDto dto) {
+    public IIDXDto createIIDX(@Valid @RequestBody IIDXDto dto) {
         return uploadService.createIIDX(dto);
     }
 
@@ -24,7 +25,7 @@ public class UploadController {
     }
 
     @DeleteMapping("delete-iidx")
-    public void deleteIIDX(@RequestParam Long id) throws BadRequestException {
+    public void deleteIIDX(@RequestParam("id") Long id) throws BadRequestException {
         uploadService.deleteIIDX(id);
     }
 }

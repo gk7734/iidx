@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-public class IIDXEntity {
+public class IIDXEntity extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
@@ -31,7 +31,7 @@ public class IIDXEntity {
     private String genre;
 
     @Column(name = "bpm", nullable = false)
-    private Integer bpm;
+    private String bpm;
 
     @Column(name = "beginner")
     private String beg;
@@ -60,5 +60,7 @@ public class IIDXEntity {
         this.sph = dto.getSph();
         this.spa = dto.getSpa();
         this.spl = dto.getSpl();
+        this.regDate = dto.getRegDate();
+        this.modDate = dto.getModDate();
     }
 }
