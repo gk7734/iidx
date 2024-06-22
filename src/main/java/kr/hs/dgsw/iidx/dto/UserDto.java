@@ -22,6 +22,10 @@ public class UserDto {
 
     @NotBlank
     @NotEmpty
+    private String username;
+
+    @NotBlank
+    @NotEmpty
     private String diffculty;
 
     @NotBlank

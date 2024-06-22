@@ -18,6 +18,9 @@ public class UserEntity {
     Long id;
 
     @Column(nullable = false)
+    String username;
+
+    @Column(nullable = false)
     String name;
 
     @Column(nullable = false)
