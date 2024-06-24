@@ -26,7 +26,7 @@ public class UserDto {
     @NotEmpty
     private String username;
 
-    private DifficultyEnum diffculty;
+    private DifficultyEnum difficulty;
 
     private RankEnum rank;
 
@@ -40,7 +40,7 @@ public class UserDto {
         this.id = entity.getId();
         this.name = entity.getName();
         this.username = entity.getUsername();
-        this.diffculty = entity.getDiffculty();
+        this.difficulty = entity.getDifficulty();
         this.rank = entity.getRank();
         this.gauge = entity.getGauge();
         this.ex_score = entity.getEx_score();

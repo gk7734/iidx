@@ -9,7 +9,7 @@ import java.util.List;
 public interface UserService {
     UserDto getUserRank(Long id) throws BadRequestException;
 
-    List<UserEntity> getAllUserRank(String username) throws BadRequestException;
+    List<UserEntity> getAllUserRank() throws BadRequestException;
 
     UserDto createUserRank(UserDto dto);
 

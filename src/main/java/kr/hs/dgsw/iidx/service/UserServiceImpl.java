@@ -28,8 +28,8 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public List<UserEntity> getAllUserRank(String username) throws BadRequestException {
-        List<UserEntity> entities = repository.findByUsername(username);
+    public List<UserEntity> getAllUserRank() throws BadRequestException {
+        List<UserEntity> entities = repository.findAll();
 
         if (entities.isEmpty()) {
             throw new BadRequestException();

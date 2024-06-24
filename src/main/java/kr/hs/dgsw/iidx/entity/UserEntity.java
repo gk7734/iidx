@@ -26,7 +26,7 @@ public class UserEntity {
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    DifficultyEnum diffculty;
+    DifficultyEnum difficulty;
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
@@ -43,7 +43,7 @@ public class UserEntity {
         this.id = dto.getId();
         this.username = dto.getUsername();
         this.name = dto.getName();
-        this.diffculty = dto.getDiffculty();
+        this.difficulty = dto.getDifficulty();
         this.rank = dto.getRank();
         this.gauge = dto.getGauge();
         this.ex_score = dto.getEx_score();

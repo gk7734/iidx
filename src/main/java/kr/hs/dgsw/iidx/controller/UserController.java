@@ -22,8 +22,8 @@ public class UserController {
     }
 
     @GetMapping("get-AllUserRank")
-    public List<UserEntity> getAllUserRank(@RequestParam("username") String username) throws BadRequestException {
-        return userService.getAllUserRank(username);
+    public List<UserEntity> getAllUserRank() throws BadRequestException {
+        return userService.getAllUserRank();
     }
 
     @PostMapping("create-userRank")
