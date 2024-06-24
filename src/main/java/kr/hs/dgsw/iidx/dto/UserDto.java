@@ -1,9 +1,8 @@
 package kr.hs.dgsw.iidx.dto;
 
-import jakarta.persistence.EnumType;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
-import kr.hs.dgsw.iidx.Enum.DiffucltyEnum;
+import kr.hs.dgsw.iidx.Enum.DifficultyEnum;
 import kr.hs.dgsw.iidx.Enum.GaugeEnum;
 import kr.hs.dgsw.iidx.Enum.RankEnum;
 import kr.hs.dgsw.iidx.entity.UserEntity;
@@ -27,7 +26,7 @@ public class UserDto {
     @NotEmpty
     private String username;
 
-    private DiffucltyEnum diffculty;
+    private DifficultyEnum diffculty;
 
     private RankEnum rank;
 

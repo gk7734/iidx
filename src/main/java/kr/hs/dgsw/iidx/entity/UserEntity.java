@@ -1,7 +1,7 @@
 package kr.hs.dgsw.iidx.entity;
 
 import jakarta.persistence.*;
-import kr.hs.dgsw.iidx.Enum.DiffucltyEnum;
+import kr.hs.dgsw.iidx.Enum.DifficultyEnum;
 import kr.hs.dgsw.iidx.Enum.GaugeEnum;
 import kr.hs.dgsw.iidx.Enum.RankEnum;
 import kr.hs.dgsw.iidx.dto.UserDto;
@@ -26,7 +26,7 @@ public class UserEntity {
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    DiffucltyEnum diffculty;
+    DifficultyEnum diffculty;
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
