@@ -1,13 +1,14 @@
 package kr.hs.dgsw.iidx.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import kr.hs.dgsw.iidx.Enum.DiffucltyEnum;
+import kr.hs.dgsw.iidx.Enum.GaugeEnum;
+import kr.hs.dgsw.iidx.Enum.RankEnum;
+import kr.hs.dgsw.iidx.dto.UserDto;
+import lombok.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "user_rank")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -25,16 +26,26 @@ public class UserEntity {
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    String diffculty;
+    DiffucltyEnum diffculty;
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    String rank;
+    RankEnum rank;
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    String gauge;
+    GaugeEnum gauge;
 
     @Column(nullable = false)
     String ex_score;
+
+    public UserEntity(UserDto dto) {
+        this.id = dto.getId();
+        this.username = dto.getUsername();
+        this.name = dto.getName();
+        this.diffculty = dto.getDiffculty();
+        this.rank = dto.getRank();
+        this.gauge = dto.getGauge();
+        this.ex_score = dto.getEx_score();
+    }
 }

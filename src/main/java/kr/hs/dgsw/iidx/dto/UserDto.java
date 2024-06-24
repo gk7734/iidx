@@ -3,6 +3,9 @@ package kr.hs.dgsw.iidx.dto;
 import jakarta.persistence.EnumType;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
+import kr.hs.dgsw.iidx.Enum.DiffucltyEnum;
+import kr.hs.dgsw.iidx.Enum.GaugeEnum;
+import kr.hs.dgsw.iidx.Enum.RankEnum;
 import kr.hs.dgsw.iidx.entity.UserEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,17 +27,11 @@ public class UserDto {
     @NotEmpty
     private String username;
 
-    @NotBlank
-    @NotEmpty
-    private String diffculty;
+    private DiffucltyEnum diffculty;
 
-    @NotBlank
-    @NotEmpty
-    private String rank;
+    private RankEnum rank;
 
-    @NotBlank
-    @NotEmpty
-    private String gauge;
+    private GaugeEnum gauge;
 
     @NotBlank
     @NotEmpty
@@ -43,6 +40,7 @@ public class UserDto {
     public UserDto(UserEntity entity) {
         this.id = entity.getId();
         this.name = entity.getName();
+        this.username = entity.getUsername();
         this.diffculty = entity.getDiffculty();
         this.rank = entity.getRank();
         this.gauge = entity.getGauge();
